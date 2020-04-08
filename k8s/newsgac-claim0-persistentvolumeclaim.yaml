@@ -3,8 +3,10 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     io.kompose.service: newsgac-claim0
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-client"
   name: newsgac-claim0
-  namespace: tci-newsgac
+  namespace: newsgac
 spec:
   accessModes:
   - ReadWriteMany

@@ -4,7 +4,7 @@ metadata:
   labels:
     io.kompose.service: frog
   name: frog
-  namespace: tci-newsgac
+  namespace: newsgac
 spec:
   ports:
   - name: "12345"

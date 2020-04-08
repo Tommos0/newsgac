@@ -1,12 +1,15 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     io.kompose.service: web
   name: web
-  namespace: tci-newsgac
+  namespace: newsgac
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: web
   strategy:
     type: Recreate
   template:
@@ -14,6 +17,7 @@ spec:
       labels:
         io.kompose.service: web
         external-ingress: enabled
+        name: web
     spec:
       containers:
       - args:

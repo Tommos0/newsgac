@@ -16,8 +16,10 @@ Address:	8.8.8.8#53
 
 Non-authoritative answer:
 Name:	newsgac.yourdomain
-Address: 194.171.4.29
+Address: xxx.xxx.xxx.xxx
 ```
+
+Configure outside proxy to handle SSL for this domain
 
 Create `web-ingress.yml` for external ingress
 

@@ -1,18 +1,22 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     io.kompose.service: frogworker
   name: frogworker
-  namespace: tci-newsgac
+  namespace: newsgac
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: frogworker
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         io.kompose.service: frogworker
+        name: frogworker
     spec:
       containers:
       - args:

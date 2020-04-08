@@ -4,11 +4,11 @@ metadata:
   labels:
     io.kompose.service: web
   name: web
-  namespace: tci-newsgac
+  namespace: newsgac
 spec:
   ports:
-  - name: "5050"
-    port: 5050
+  - name: "80"
+    port: 80
     targetPort: 5050
   selector:
     io.kompose.service: web

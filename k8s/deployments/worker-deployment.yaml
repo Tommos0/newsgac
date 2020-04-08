@@ -1,18 +1,22 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     io.kompose.service: worker
   name: worker
-  namespace: tci-newsgac
+  namespace: newsgac
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: worker
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         io.kompose.service: worker
+        name: worker
     spec:
       containers:
       - args:
